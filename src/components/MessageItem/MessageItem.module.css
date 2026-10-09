@@ -1,0 +1,62 @@
+.message {
+  max-width: min(72%, 560px);
+  padding: 8px 12px;
+  border-radius: var(--radius-m);
+  align-self: flex-start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  overflow-wrap: anywhere;
+}
+
+.outgoing {
+  align-self: flex-end;
+  background: var(--color-outgoing);
+  border-color: transparent;
+}
+
+.text {
+  white-space: pre-wrap;
+}
+
+.meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.pending,
+.sent,
+.failed {
+  font-size: 12px;
+}
+
+.failed {
+  color: var(--color-error);
+}
+
+.failure {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.retry {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  border-radius: var(--radius-s);
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.retry:hover {
+  background: rgb(0 0 0 / 4%);
+}

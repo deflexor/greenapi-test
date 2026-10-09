@@ -1,0 +1,30 @@
+.screen {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-l);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}

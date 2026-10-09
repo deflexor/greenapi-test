@@ -1,0 +1,94 @@
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  height: 100dvh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  min-height: 0;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding: var(--space-m) var(--space-l);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.disconnect {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-s);
+  padding: 4px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+.disconnect:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  background: var(--color-bg);
+}
+
+.noChat {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  padding: var(--space-l);
+  text-align: center;
+}
+
+.conversation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.receiveIssue {
+  margin: 0;
+  padding: var(--space-s) var(--space-l);
+  background: var(--color-warning-bg);
+  border-bottom: 1px solid var(--color-warning-border);
+  font-size: 13px;
+}
+
+/* Мобильная версия: показываем либо список чатов, либо переписку. */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    grid-area: 1 / 1;
+    border-right: none;
+  }
+
+  .chatArea {
+    grid-area: 1 / 1;
+  }
+
+  .layout:not(.chatOpened) .chatArea {
+    display: none;
+  }
+
+  .layout.chatOpened .sidebar {
+    display: none;
+  }
+}

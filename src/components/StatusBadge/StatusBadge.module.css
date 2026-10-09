@@ -1,0 +1,27 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-text-secondary);
+  flex-shrink: 0;
+}
+
+.connected .dot {
+  background: var(--color-accent);
+}
+
+.connecting .dot {
+  background: var(--color-warning-border);
+}
+
+.error .dot {
+  background: var(--color-error);
+}
